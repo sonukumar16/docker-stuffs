@@ -1,0 +1,29 @@
+redis:
+  image: redis
+
+db:
+  image: postgres:9.4
+
+vote:
+  image: eesprit/voting-app-vote # if you have not image then use build comand and assign path of your project folder
+  ports:
+    - 5000:80
+  links:
+    - redis
+    
+result:
+  image: eesprit/voting-app-result
+  ports:
+    - 5001:80
+  links:
+    - db
+
+worker:
+  image: jplatorre/worker
+  links:
+    - redis
+    - db
+
+  # this is default version of docker compose
+  # here network is default "bridge network", we can't define any other network
+  # can't define dependecies and starting order(priorities) of containers

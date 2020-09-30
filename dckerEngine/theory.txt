@@ -1,0 +1,19 @@
+When you install docker on linux os then these three components are install inside your docker. 
+
+Docker Deamon:- It's background process which manage docker objects such as contianers, images, networkes and volumens, etc.
+Rest Apis:- it's api interface that programs to talk to Deamon and provide instructions.You can create your owns tool by using this rest Apis.
+Docker CLI :-  it perform the operation such as create, run destory contianers.it can be hosted on any remote location/server/Host.
+E.g. To run container on a remote Host use like this:- 
+docker -H=remote-host-engine:2375
+docker -H=10.123.2.1:2375 run nginx
+
+docker usages namesapce to isolate namesapces (03.png)
+
+namesapce : processId
+as we know docker usages host os.
+when your system bootstarp there is only one process with unique Id and once it's finished we would have multiple process with their uniqueIds.
+Containers treate itself as an issolated system so their processes also have different processIds.
+We list all(same) services on hosts as well as inside container but they have different processIds.
+
+
+docker usages cgroup to restrict resounce  usages see 05.png
