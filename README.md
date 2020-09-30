@@ -12,5 +12,4 @@
 10. dockerOnMac
 11. ContainerOrchestration
 12. dockerSwarm
-13. 
-14. 
+13. Kubernets 
