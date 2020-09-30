@@ -1,0 +1,42 @@
+When docker install it creates file structure like (01.png).
+     var/lib/docker
+          |- ausf
+          |- containers
+          |- volumes
+          |- images
+          |- networks 
+
+Create volume by using this command amd it would be inside the docker's default file system as above
+     docker volume create data_volume   // here data_volume is volume name
+
+like this:-
+ var/lib/docker
+     |- ausf
+     |- containers
+     |- volumes
+     |- images
+     |- networks 
+     |- data_volume 
+
+Two types of mount in docker:-
+     1. volume mount :- volume will be mounted inside default volume directory of docker file system
+     2. Bind mount :- any location (Full path) of a directory on host machine.
+
+
+Allocate the volume to container :
+     Volume mount:- 
+          docker run -v  data_volume:var/lib/mysql mysql  // here data_volume is created volume in side docker file system and var/lib/mysql is mysql container volume
+
+     Bind mount :-
+          docker run -v  /data/mysql:var/lib/mysql mysql   //here /data/mysql is directory on your host machine
+
+But now days this command is using
+  docker run --mount type=bind, source=data/mysql, target=var/lib/mysql mysql
+
+
+  Who is responsible for managing volume related things
+  -->> Storage Driver (07.png)
+     Aufs (for ubunutu)
+
+ Docker will choose best storage driver based on OS, different storage driver provides different performance, stability, characteristics 
+ so you may choose based on need of your organization.   
