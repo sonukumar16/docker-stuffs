@@ -1,0 +1,14 @@
+{
+  "name": "docker_web_app",
+  "description": "Node.js on Docker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "sonu kumar",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,8 @@
+There type of network 
+Bridge: default one and it creates a private internal network. Docker binds all containers are with this network and 
+        container can communicate with each others by usige theire ips.Here port mapping is required to access outside the conatiners.
+None: Isolated network
+Host:- conatiners can communicate and access by using host network.        
+
+
+Docker uses namespace that creates namespace for each containers. Then it uses virtual Ethernet pairs to connect containers together.
